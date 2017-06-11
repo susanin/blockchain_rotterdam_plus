@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   sendContract() {
-    SignDocument.new(this.state.currentApprovers.map((a) => a.id), () => console.log(arguments))
+    SignDocument.new(this.state.currentApprovers.map((a) => a.id), {}, (a, b,c ,d) => console.log(a,b,c,d))
   }
 
   render() {

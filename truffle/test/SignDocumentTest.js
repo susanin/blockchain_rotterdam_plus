@@ -48,4 +48,15 @@ contract('SignDocument', function(accounts) {
             assert.equal(signed, false, 'Document is signed');
         });
     });
+
+    it('should dissalow attemps to sing already signed contract', function() {
+        SignDocument.new([accounts[0]]).then(function(instance) {
+            instance.sign({from: accounts[0]});
+            return instance.sign.call({from: accounts[0]});
+        }).then(function(value) {
+            assert.fail('Exception should be thrown');
+        }).catch(function(error) {
+            assert(error != null, 'Exception expected.');
+        });
+    });
 });

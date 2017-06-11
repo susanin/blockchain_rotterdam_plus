@@ -18,6 +18,35 @@
   font-size: large;
 }
 
+.Contract {
+  width: 400px;
+  margin: 0 auto;
+
+  font-size: 15px;
+}
+
+.Contract div + button {
+  margin-top: 20px;
+}
+
+.Contract div > button {
+  float: right;
+}
+
+.Contract-holder {
+  text-align: center;
+  padding: 20px;
+}
+
+.Approvers {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.Approvers-selected {
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

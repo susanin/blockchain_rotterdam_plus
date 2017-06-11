@@ -33,13 +33,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (typeof window.web3 === 'undefined') {
-      web3 = new Web3(new Web3.providers.HttpProvider("http://40.118.96.33:8545"));
-    } else {
-      web3 = window.web3;
-    }
+    setTimeout(() => {
+      if (typeof window.web3 === 'undefined') {
+        web3 = new Web3(new Web3.providers.HttpProvider("http://40.118.96.33:8545"));
+      } else {
+        web3 = window.web3;
+      }
 
-    SignDocument = web3.eth.contract([notCompiledContract]);
+      SignDocument = web3.eth.contract([notCompiledContract]);
+    }, 1000)
   }
 
   sendContract() {
